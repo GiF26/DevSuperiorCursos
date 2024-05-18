@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Logica_DevSuperior/Desafios/Desafios.iml" filepath="$PROJECT_DIR$/Logica_DevSuperior/Desafios/Desafios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DevSuperiorCursos.iml" filepath="$PROJECT_DIR$/.idea/DevSuperiorCursos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Logica_DevSuperior/EstruturasCondicionais/EstruturasCondicionais.iml" filepath="$PROJECT_DIR$/Logica_DevSuperior/EstruturasCondicionais/EstruturasCondicionais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Logica_DevSuperior/EstruturasSequenciais/EstruturasSequenciais.iml" filepath="$PROJECT_DIR$/Logica_DevSuperior/EstruturasSequenciais/EstruturasSequenciais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Java_DevSuperior.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Java_DevSuperior.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Logica_DevSuperior/Logica_DevSuperior.iml" filepath="$PROJECT_DIR$/Logica_DevSuperior/Logica_DevSuperior.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Rectangle/Rectangle.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Rectangle/Rectangle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Stock_Product/Stock_Product.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Stock_Product/Stock_Product.iml" />
+    </modules>
+  </component>
+</project>
