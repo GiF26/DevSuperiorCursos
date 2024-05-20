@@ -11,12 +11,6 @@ public class Application {
         obj.height = sc.nextDouble();
 
         System.out.println(obj);
-
-//        Entre com a largura e altura do retângulo:
-//                3.00
-//        4.00
-//        AREA = 12.00
-//        PERIMETRO = 14.00
-//        DIAGONAL = 5.00
+        sc.close();
     }
 }
