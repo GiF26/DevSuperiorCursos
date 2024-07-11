@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Cambio/Cambio.iml" filepath="$PROJECT_DIR$/Cambio/Cambio.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Employee/Employee.iml" filepath="$PROJECT_DIR$/Employee/Employee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classes,metodos,atributos/Cambio/Cambio.iml" filepath="$PROJECT_DIR$/classes,metodos,atributos/Cambio/Cambio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classes,metodos,atributos/Employee/Employee.iml" filepath="$PROJECT_DIR$/classes,metodos,atributos/Employee/Employee.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Java_DevSuperior.iml" filepath="$PROJECT_DIR$/.idea/Java_DevSuperior.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Rectangle/Rectangle.iml" filepath="$PROJECT_DIR$/Rectangle/Rectangle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Stock_Product/Stock_Product.iml" filepath="$PROJECT_DIR$/Stock_Product/Stock_Product.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Student/Student.iml" filepath="$PROJECT_DIR$/Student/Student.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classes,metodos,atributos/Rectangle/Rectangle.iml" filepath="$PROJECT_DIR$/classes,metodos,atributos/Rectangle/Rectangle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classes,metodos,atributos/Stock_Product/Stock_Product.iml" filepath="$PROJECT_DIR$/classes,metodos,atributos/Stock_Product/Stock_Product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/classes,metodos,atributos/Student/Student.iml" filepath="$PROJECT_DIR$/classes,metodos,atributos/Student/Student.iml" />
     </modules>
   </component>
 </project>
