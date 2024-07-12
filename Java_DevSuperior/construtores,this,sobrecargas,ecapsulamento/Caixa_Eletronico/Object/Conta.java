@@ -1,46 +1,42 @@
 
 public class Conta {
-    private static int nroConta;
-    private static String nomeTitular;
-    private static double saldo;
+    private final int nroConta;
+    private String nomeTitular;
+    private double saldo;
 
-    public static int getNroConta() {
-        return Conta.nroConta;
+    public int getNroConta() {
+        return nroConta;
     }
 
-    public static String getNomeTitular() {
+    public String getNomeTitular() {
         return nomeTitular;
     }
 
-    public static void setNomeTitular(String nomeTitular) {
-        Conta.nomeTitular = nomeTitular;
+    public void setNomeTitular(String nomeTitular) {
+        this.nomeTitular = nomeTitular;
     }
 
-    public static double getSaldo() {
+    public double getSaldo() {
         return saldo;
-    }
-
-    private static void setSaldo(double saldo) {
-        Conta.saldo = saldo;
     }
 
     public Conta(String nomeTitular, int nroConta, double depositoInicial) {
         setNomeTitular(nomeTitular);
-        Conta.nroConta = nroConta;
-        setSaldo(depositoInicial);
+        this.nroConta = nroConta;
+        deposito(depositoInicial);
     }
 
     public Conta(String nomeTitular, int nroConta) {
         setNomeTitular(nomeTitular);
-        Conta.nroConta = nroConta;
+        this.nroConta = nroConta;
     }
 
-    public static void deposito(double valorDeposito){
-        setSaldo(getSaldo() + valorDeposito);
+    public void deposito(double valorDeposito){
+        saldo += valorDeposito;
     }
 
-    public static void saque(double valorSaque){
-        setSaldo(getSaldo() - valorSaque - 5);
+    public void saque(double valorSaque){
+        saldo -= valorSaque + 5;
     }
 
 }
