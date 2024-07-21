@@ -19,10 +19,10 @@ public class Application {
                     System.out.println("\nSua conta foi criada! seus dados sao : " +
                             "\nTitular: " + conta1.getNomeTitular() +
                             "\nNumero da conta: " + conta1.getNroConta());
-
                     break;
 
                 case 2:
+                    conta1 = new Conta(nomeTitular,26003005);
                     System.out.println("De quanto gostaria de depositar ?");
                     conta1.deposito(sc.nextDouble());
 
@@ -30,7 +30,7 @@ public class Application {
                     System.out.println("Sua conta foi criada e seus dados sao : \n" +
                             "\nTitular: " + conta1.getNomeTitular() +
                             "\nNumero da conta1: " + conta1.getNroConta() +
-                            "\nDeposito inicial: + R$" + conta1.getSaldo());
+                            "\nDeposito inicial: R$" + conta1.getSaldo());
                     break;
 
                 default:
@@ -48,22 +48,20 @@ public class Application {
 
             switch (decisao){
                 case 1:
+                    System.out.println("Informe o valor do saque");
                     conta1.saque(sc.nextDouble());
-                    System.out.println("Titular: " + conta1.getNomeTitular() +
-                            ",Numero da Conta: " + conta1.getNroConta() +
-                            ",Saldo Atual: - R$" + conta1.getSaldo());
                     break;
                 case 2:
+                    System.out.println("Informe o valor do deposito");
                     conta1.deposito(sc.nextDouble());
-                    System.out.println("Titular: " + conta1.getNomeTitular() +
-                            ",Numero da Conta: " + conta1.getNroConta() +
-                            ",Saldo Atual: + R$" + conta1.getSaldo());
                     break;
                 default:
                     System.out.println("Voce saiu da conta!");
                     decisao = 0;
                     break;
             }
+
+            System.out.println(conta1);
         }
     }
 }

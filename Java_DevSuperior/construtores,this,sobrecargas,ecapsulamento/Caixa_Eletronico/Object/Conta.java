@@ -39,4 +39,10 @@ public class Conta {
         saldo -= valorSaque + 5;
     }
 
+    @Override
+    public String toString() {
+        return "Titular: " + getNomeTitular() +
+                ",Numero da Conta: " + getNroConta() +
+                ",Saldo Atual: + R$" + getSaldo();
+    }
 }
