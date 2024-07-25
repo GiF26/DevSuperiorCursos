@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/construtores,this,sobrecargas,ecapsulamento/Caixa_Eletronico/Object" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/construtores,this,sobrecargas,ecapsulamento/Caixa_Eletronico/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Desafios" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/memorias, vetores e listas" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
