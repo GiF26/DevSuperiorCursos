@@ -8,47 +8,44 @@ public class Application {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Quantas pessoas serao digitadas?");
-        int[] qtdPessoas = new int[sc.nextInt()];
+        int qtdPessoas = sc.nextInt();
 
-        String[] nome = new String[qtdPessoas.length];
-        int[] idade = new int[qtdPessoas.length];
-        double[] altura = new double[qtdPessoas.length];
+        String[] nome = new String[qtdPessoas];
+        int[] idade = new int[qtdPessoas];
+        double[] altura = new double[qtdPessoas];
 
-        for(int i = 0; i < qtdPessoas.length; i++){
+        for(int i = 0; i < qtdPessoas; i++){
             sc.nextLine();
             System.out.println("Dados da " + (i+1) + "pessoa:");
+            System.out.println("nome :");
             nome[i] = sc.nextLine();
+            System.out.println("idade :");
             idade[i] = sc.nextInt();
+            System.out.println("altura :");
             altura[i] = sc.nextDouble();
         }
 
         double soma = 0;
         double menos16 = 0;
-        String[] pessoasMenos16 = new String[qtdPessoas.length];
-        for(int i = 0; i < qtdPessoas.length; i++){
+
+        for(int i = 0; i < qtdPessoas; i++){
             soma += altura[i];
             if(idade[i] < 16){
-                menos16 += idade[i];
-                pessoasMenos16[i] = nome[i];
+                menos16 ++;
             }
         }
 
-        double media = soma/ qtdPessoas.length;
-        double porcentMenos16 = menos16 * 100/ qtdPessoas.length;
+        double media = soma / qtdPessoas;
+        double porcentMenos16 = menos16 * 100 / qtdPessoas;
 
-        System.out.println("Altura média " + media);
-        System.out.println("Pessoas com menos de 16 anos" + porcentMenos16);
+        System.out.println("\nAltura média: " + media);
+        System.out.println("Pessoas com menos de 16 anos: " + porcentMenos16 + "%");
 
-        for(int i = 0; i < pessoasMenos16.length; i++){
-            System.out.println(pessoasMenos16[i]);
+        for(int i = 0; i < qtdPessoas; i++){
+            if(idade[i] < 16){
+                System.out.println(nome[i]);
+            }
         }
-
-
+        sc.close();
     }
-
-
-
-
-
-
 }
