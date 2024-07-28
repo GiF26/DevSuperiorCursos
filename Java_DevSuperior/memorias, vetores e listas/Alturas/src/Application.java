@@ -38,8 +38,8 @@ public class Application {
         double media = soma / qtdPessoas;
         double porcentMenos16 = menos16 * 100 / qtdPessoas;
 
-        System.out.println("\nAltura média: " + media);
-        System.out.println("Pessoas com menos de 16 anos: " + porcentMenos16 + "%");
+        System.out.printf("\nAltura media = %.2f\n", media);
+        System.out.printf("Pessoas com menos de 16 anos: %.1f%%\n", porcentMenos16);
 
         for(int i = 0; i < qtdPessoas; i++){
             if(idade[i] < 16){
