@@ -3,11 +3,9 @@ package Ex_Fixacao.Object;
 import java.util.List;
 
 public class Functionary {
-    private int id;
+    private Integer id;
     private String name;
-    private double salary;
-
-    public static List<Functionary> listEmployee = new java.util.ArrayList<>();
+    private Double salary;
 
     public int getId() {
         return id;
@@ -33,17 +31,17 @@ public class Functionary {
         this.salary = salary;
     }
 
-    public static void increaseSalary(int id, double percent){
-
-        for (Functionary i : listEmployee){
-            if(i.getId() == id){
-                double newSalary = i.getSalary() + (i.getSalary() * (percent / 100)) ;
-                i.setSalary(newSalary);
-                break;
-            }
-        }
-
-
-
+    public void increaseSalary(double percent){
+        salary += salary *  (percent / 100) ;
     }
+
+    public Functionary(Integer id, String name, Double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+    public String toString() {
+        return id + ", " + name + ", " + String.format("%.2f", salary);
+    }
+
 }
