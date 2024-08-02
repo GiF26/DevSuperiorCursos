@@ -23,9 +23,24 @@ public class Application {
                 double servicesIncome = sc.nextDouble();
                 System.out.println("Renda anual com ganho de capital:");
                 double capitalIncome = sc.nextDouble();
+                System.out.println("Gastos Médicos:");
+                double healthSpendig = sc.nextDouble();
+                System.out.println("Gastos Educacionais:");
+                double educacionalSpendig = sc.nextDouble();
 
-                contribuintesList.add(new Contribuintes(salaryIncome,servicesIncome,capitalIncome));
+                contribuintesList.add(new Contribuintes(salaryIncome,servicesIncome,capitalIncome,healthSpendig,educacionalSpendig));
             }
+
+            for (int i = 0; i < n; i++){
+                System.out.println("Resumo do " + ( i + 1) + "o contribuinte:");
+                Contribuintes o = contribuintesList.get(i);
+
+                System.out.println("Imposto bruto total: " + o.grossTax());
+                System.out.println("Abatimento: " + o.taxRebate());
+                System.out.println("Imposto Devido: " + o.netTax());
+            }
+
+
         }
     }
 }

@@ -48,16 +48,58 @@ public class Contribuintes {
         this.educationSpending = educationSpending;
     }
 
-    public double salaryTax(){return 0;}
-    public double servicesTax(){return 0;}
-    public double capitalTax(){return 0;}
-    public double grossTax(){return 0;}
-    public double taxRebate(){return 0;}
-    public double netTax(){return 0;}
+    public double salaryTax(){
 
-    public Contribuintes(Double salaryIncome, Double servicesIncome, Double capitalIncome) {
+        if(salaryIncome >= 5000){
+            return salaryIncome -= salaryIncome + (double) 20 /100;
+        }
+        if (salaryIncome >= 300) {
+            return salaryIncome -= salaryIncome + (double) 10 /100;
+        }
+
+        return 0;
+    }
+    public double servicesTax(){
+
+        if(servicesIncome > 0){
+            return servicesIncome -= servicesIncome + (double) 15 / 100;
+        }
+
+        return 0;
+    }
+    public double capitalTax(){
+
+        if(capitalIncome > 0){
+            return capitalIncome -= capitalIncome + (double) 20 / 100;
+        }
+
+        return 0;
+    }
+
+    public double grossTax(){
+        return salaryTax() + servicesTax() + capitalTax();
+    }
+
+
+    public double taxRebate(){
+
+        double spending = healthSpending + educationSpending;
+
+        if(spending >= (grossTax() + (double) 30 /100)){
+            return grossTax() - spending;
+        }
+
+        return 0;
+    }
+    public double netTax(){
+        return taxRebate() - grossTax();
+    }
+
+    public Contribuintes(Double salaryIncome, Double servicesIncome, Double capitalIncome, Double healthSpending, Double educationSpending) {
         this.salaryIncome = salaryIncome;
         this.servicesIncome = servicesIncome;
         this.capitalIncome = capitalIncome;
+        this.healthSpending = healthSpending;
+        this.educationSpending = educationSpending;
     }
 }
