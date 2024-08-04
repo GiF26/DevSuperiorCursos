@@ -50,49 +50,48 @@ public class Contribuintes {
 
     public double salaryTax(){
 
-        if(salaryIncome >= 5000){
-            return salaryIncome -= salaryIncome + (double) 20 /100;
+        double salaryMonth = salaryIncome / 12;
+
+        if(salaryMonth >= 5000){
+            return salaryIncome * (double) 20 /100;
         }
-        if (salaryIncome >= 300) {
-            return salaryIncome -= salaryIncome + (double) 10 /100;
+        if (salaryMonth >= 3000) {
+           return salaryIncome* 10 /100;
         }
 
-        return 0;
+        return 0.00;
     }
     public double servicesTax(){
-
         if(servicesIncome > 0){
-            return servicesIncome -= servicesIncome + (double) 15 / 100;
+             return servicesIncome * 15 / 100;
         }
-
-        return 0;
+        return 0.00 ;
     }
     public double capitalTax(){
-
         if(capitalIncome > 0){
-            return capitalIncome -= capitalIncome + (double) 20 / 100;
+            return capitalIncome * 20 / 100;
         }
-
-        return 0;
+        return 0.00 ;
     }
 
     public double grossTax(){
-        return salaryTax() + servicesTax() + capitalTax();
+        return salaryTax() + capitalTax() + servicesTax();
     }
-
 
     public double taxRebate(){
 
         double spending = healthSpending + educationSpending;
+        double percent = grossTax() * 30/100;
 
-        if(spending >= (grossTax() + (double) 30 /100)){
-            return grossTax() - spending;
+        if(spending >= percent){
+            return percent;
+        }else {
+            return spending;
         }
 
-        return 0;
     }
     public double netTax(){
-        return taxRebate() - grossTax();
+        return grossTax() - taxRebate();
     }
 
     public Contribuintes(Double salaryIncome, Double servicesIncome, Double capitalIncome, Double healthSpending, Double educationSpending) {
