@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class Soma_Linhas {
+public class Negativos_matriz {
     public static void main(String[] args) {
-        try (Scanner sc = new Scanner(System.in)){
+        try(Scanner sc = new Scanner(System.in)){
 
             System.out.println("Qual a quantidade de linhas da matriz?");
             int l = sc.nextInt();
             while(l > 10){
-                System.out.println("ordem invalida, insira uma menor ou igual a 10!!");
+                System.out.println("ordem invalida, insXira uma menor ou igual a 10!!");
                 l = sc.nextInt();
             }
 
@@ -18,26 +18,22 @@ public class Soma_Linhas {
                 c = sc.nextInt();
             }
 
-            double[][] mat = new double[l][c];
-            double[] v = new double[l];
+            int[][] mat = new int[l][c];
 
             for(int i = 0; i < l; i++){
-                System.out.println("Digite os ellementos da " + (i + 1) + "a linha");
                 for(int x = 0; x < c; x++){
-                    mat[i][x] = sc.nextDouble();
+                    System.out.println("Elemento [" + i + "," + x + "]:");
+                    mat[i][x] = sc.nextInt();
                 }
             }
 
+            System.out.println("VALORES NEGATIVOS:");
             for(int i = 0; i < l; i++){
-                double soma = 0.00;
                 for(int x = 0; x < c; x++){
-                    soma += mat [i][x];
+                    if(mat[i][x] < 0){
+                        System.out.println(mat[i][x]);
+                    }
                 }
-                v[i] = soma;
-            }
-
-            for (double value : v) {
-                System.out.println("VETOR GERADO:" + value);
             }
         }
     }
