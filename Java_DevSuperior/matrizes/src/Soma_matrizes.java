@@ -18,38 +18,38 @@ public class Soma_matrizes {
                 c = sc.nextInt();
             }
 
-            int[][] mat = new int[l][c];
-            int[][] mat2 = new int[l][c];
-
             System.out.println("Digite os valores da matriz A");
-            carregaMatrizes(mat);
+            int[][] mat = carregaMatrizes(l , c);
             System.out.println("Digite os valores da matriz B");
-            carregaMatrizes(mat2);
+            int[][] mat2 = carregaMatrizes(l , c);
 
+            int[][] matc = new int[l][c];
             for (int i = 0; i < l; i++) {
                 for (int x = 0; x < c; x++) {
-                    mat[i][x] = mat[i][x] + mat2[i][x];
+                    matc[i][x] = mat[i][x] + mat2[i][x];
                 }
             }
 
             System.out.println("MATRIZ SOMA:");
             for (int i = 0; i < l; i++) {
                 for (int x = 0; x < c; x++) {
-                    System.out.println(mat[i][x]);
+                    System.out.println(matc[i][x]);
                 }
             }
         }
     }
 
-    private static void carregaMatrizes(int[][] mat) {
-        try (Scanner sc = new Scanner(System.in)) {
+    private static int[][] carregaMatrizes(int l ,int c) {
+        Scanner sc = new Scanner(System.in);
 
-            for (int i = 0; i < mat.length; i++) {
-                for (int x = 0; x < mat.length; x++) {
-                    System.out.println("Elemento [" + i + "],[" + x + "]");
-                    mat[i][x] = sc.nextInt();
-                }
+        int[][] mat = new int[l][c];
+        for (int i = 0; i < l; i++) {
+            for (int x = 0; x < c; x++) {
+                System.out.println("Elemento [" + i + "],[" + x + "]");
+                mat[i][x] = sc.nextInt();
             }
         }
+
+        return mat;
     }
 }
