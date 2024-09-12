@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Desafios" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/memorias, vetores e listas" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/enumeracoes_composicoes" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
