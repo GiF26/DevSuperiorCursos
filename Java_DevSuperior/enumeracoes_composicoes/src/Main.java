@@ -58,9 +58,9 @@ public class Main {
             System.out.println("Enter #" + contador + "data:" );
 
             System.out.println("Date (DD/MM/YYYY):");
-            String parseDate = String.format(sc.next(), "DD/MM/YYYY");
-            Date date = Date.parse(parseDate);
-            hc.setDate(Date.parse(date));
+//            String parseDate = String.format(sc.next(), "DD/MM/YYYY");
+//            Date date = Date.parse(parseDate);
+//            hc.setDate(Date.parse(date));
 
             System.out.println("Value per hour");
             hc.setValuePreHour(sc.nextDouble());
