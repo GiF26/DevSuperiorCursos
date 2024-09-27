@@ -1,17 +1,15 @@
 package Objects;
 
-import java.util.Date;
-
 public class HourContract {
-    private Date date;
+    private long date;
     private double valuePreHour;
     private Integer hours;
 
-    public Date getDate() {
+    public long getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
