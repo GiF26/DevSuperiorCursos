@@ -1,19 +1,21 @@
 package Objects;
 
+import java.util.Date;
+
 public class HourContract {
-    private long date;
+    private Date date;
     private double valuePreHour;
     private Integer hours;
 
-    public long getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(long date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public double getValuePreHour() {
+    public double getValuePerHour() {
         return valuePreHour;
     }
 
@@ -30,7 +32,7 @@ public class HourContract {
     }
 
     public double totalValue(){
-        return 0;
+        return getHours() * getValuePerHour();
     }
 
 }

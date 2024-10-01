@@ -4,22 +4,23 @@ import Enums.WorkerLevel;
 import Objects.Departament;
 import Objects.HourContract;
 import Objects.Worker;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
 
-    static ArrayList<HourContract> contracts = new ArrayList<>();
-    static Worker wk = new Worker();
-    static Departament dp;
     static Scanner sc = new Scanner(System.in);
-    static int qtyContract = 0;
+    static Departament dp;
+    static Worker wk = new Worker();
 
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         addDepartment();
         addWorker();
-        addContract(qtyContract);
+        addContract();
         calcIncome();
         sc.close();
     }
@@ -30,12 +31,12 @@ public class Main {
     }
 
     public static void addWorker(){
-        System.out.println("Enter worker data:");
+        wk = new Worker();
 
+        System.out.println("Enter worker data:");
         sc.nextLine();
         System.out.println("Name");
         wk.setName(sc.nextLine());
-
         System.out.print("Level");
         String level = sc.nextLine().toUpperCase();
         switch (level){
@@ -49,50 +50,45 @@ public class Main {
                 wk.setLevel(WorkerLevel.SENIOR);
                 break;
         }
-
-
         System.out.println("Base salary");
         double baseSalary = sc.nextDouble();
         wk.setBaseSalary(baseSalary);
+
     }
 
-    public static void addContract(int qtyContract){
+    public static void addContract() throws ParseException {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
         System.out.println("How many contracts to this worker");
         int qtyContractWorker = sc.nextInt();
 
-        while (contracts.size()  <= qtyContractWorker){
+        for (int i = 0; i < qtyContractWorker; i++){
             HourContract hc = new HourContract();
-            int contador = 1;
-            System.out.println("Enter #" + contador + "data:" );
-
+            System.out.println("Enter #" + (i + 1) + "data:" );
             System.out.println("Date (DD/MM/YYYY):");
-            String parseDate = String.format(sc.next(), "DD/MM/YYYY");
-            System.out.println(parseDate);
-//            Date date = Date.parse(parseDate);
-            //hc.setDate(Date.parse(date));
-
+            String date = sc.next();
+            hc.setDate(dateFormat.parse(date));
             System.out.println("Value per hour");
             hc.setValuePreHour(sc.nextDouble());
             System.out.println("Duration (hours)");
             hc.setHours(sc.nextInt());
 
-            contracts.add(hc);
+            wk.addContract(hc);
         }
     }
 
-    public static void calcIncome(){
+    public static void calcIncome() {
         System.out.println("Enter month and year to calculate income (MM/YYYY):");
-        String income = sc.next();
+        String dateIncomeCalc = sc.next();
+        String[] dateIncomeCalcSplit =  dateIncomeCalc.split("/");
+        int month = Integer.parseInt(dateIncomeCalcSplit[0]);
+        int year = Integer.parseInt(dateIncomeCalcSplit[1]);
 
-        System.out.println("Name:");
-        System.out.println(wk.getName());
-        System.out.println("Departament :" );
-        System.out.println(dp.getName());
-        System.out.println("Income for " + income + ":");
-        double incomeValue = 0;
-        System.out.println(incomeValue);
+        System.out.println("Departament :" + dp.getName());
+        System.out.println("Name:" + wk.getName());
+        System.out.println("Level:" + wk.getLevel());
+        System.out.println("Income for " + dateIncomeCalc + ": " + wk.income(month, year));
 
-        contracts.clear();
     }
 
 
