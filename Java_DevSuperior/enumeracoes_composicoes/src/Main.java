@@ -7,7 +7,6 @@ import Objects.Worker;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -15,7 +14,8 @@ public class Main {
 
     static Scanner sc = new Scanner(System.in);
     static Departament dp;
-    static Worker wk = new Worker();
+    static Worker wk;
+    static HourContract hc;
 
     public static void main(String[] args) throws ParseException {
         addDepartment();
@@ -31,29 +31,16 @@ public class Main {
     }
 
     public static void addWorker(){
-        wk = new Worker();
-
-        System.out.println("Enter worker data:");
         sc.nextLine();
+        System.out.println("Enter worker data:");
         System.out.println("Name");
-        wk.setName(sc.nextLine());
+        String name = sc.nextLine();
         System.out.print("Level");
         String level = sc.nextLine().toUpperCase();
-        switch (level){
-            case "JUNIOR":
-                wk.setLevel(WorkerLevel.JUNIOR);
-                break;
-            case "MID LEVEL":
-                wk.setLevel(WorkerLevel.MID_LEVEL);
-                break;
-            case "SENIOR":
-                wk.setLevel(WorkerLevel.SENIOR);
-                break;
-        }
         System.out.println("Base salary");
         double baseSalary = sc.nextDouble();
-        wk.setBaseSalary(baseSalary);
 
+        wk = new Worker(name, WorkerLevel.valueOf(level), baseSalary);
     }
 
     public static void addContract() throws ParseException {
@@ -63,16 +50,16 @@ public class Main {
         int qtyContractWorker = sc.nextInt();
 
         for (int i = 0; i < qtyContractWorker; i++){
-            HourContract hc = new HourContract();
             System.out.println("Enter #" + (i + 1) + "data:" );
             System.out.println("Date (DD/MM/YYYY):");
             String date = sc.next();
-            hc.setDate(dateFormat.parse(date));
+            Date dateFormated = dateFormat.parse(date);
             System.out.println("Value per hour");
-            hc.setValuePreHour(sc.nextDouble());
+            double valuePHour = sc.nextDouble();
             System.out.println("Duration (hours)");
-            hc.setHours(sc.nextInt());
+            int hours = sc.nextInt();
 
+            hc = new HourContract(dateFormated, valuePHour, hours);
             wk.addContract(hc);
         }
     }
@@ -90,6 +77,4 @@ public class Main {
         System.out.println("Income for " + dateIncomeCalc + ": " + wk.income(month, year));
 
     }
-
-
 }

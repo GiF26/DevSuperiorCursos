@@ -8,7 +8,7 @@ public class Worker {
     private String name;
     private WorkerLevel level;
     private double baseSalary;
-    private ArrayList<HourContract> contracts = new ArrayList<HourContract>();
+    private ArrayList<HourContract> contracts = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -22,19 +22,9 @@ public class Worker {
         return level;
     }
 
-    public void setLevel(WorkerLevel level) {
-        this.level = level;
-    }
-
     public double getBaseSalary() {
         return baseSalary;
     }
-
-    public void setBaseSalary(double baseSalary) {
-        this.baseSalary = baseSalary;
-    }
-
-    public Worker() {}
 
     public void addContract(HourContract contract){
         contracts.add(contract);
@@ -57,9 +47,6 @@ public class Worker {
             mesObcject = Integer.parseInt(parseDate[1]);
             anoObcject = Integer.parseInt(parseDate[2]);
 
-            System.out.println( mesObcject);
-            System.out.println( anoObcject);
-
             if(mesObcject  == month && anoObcject == year){
                 totPerHour += hc.totalValue();
             }
@@ -68,5 +55,9 @@ public class Worker {
         return totPerHour + getBaseSalary();
     }
 
-
+    public Worker(String name, WorkerLevel level, double baseSalary) {
+        this.name = name;
+        this.level = level;
+        this.baseSalary = baseSalary;
+    }
 }

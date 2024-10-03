@@ -7,32 +7,23 @@ public class HourContract {
     private double valuePreHour;
     private Integer hours;
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
+    public Date getDate() { return date;}
 
     public double getValuePerHour() {
         return valuePreHour;
-    }
-
-    public void setValuePreHour(double valuePreHour) {
-        this.valuePreHour = valuePreHour;
     }
 
     public Integer getHours() {
         return hours;
     }
 
-    public void setHours(Integer hours) {
-        this.hours = hours;
-    }
-
     public double totalValue(){
         return getHours() * getValuePerHour();
     }
 
+    public HourContract(Date date, double valuePreHour, Integer hours) {
+        this.date = date;
+        this.valuePreHour = valuePreHour;
+        this.hours = hours;
+    }
 }
