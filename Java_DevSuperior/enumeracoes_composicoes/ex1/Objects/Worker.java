@@ -1,6 +1,6 @@
-package Objects;
+package ex1.Objects;
 
-import Enums.WorkerLevel;
+import ex1.Objects.Enums.WorkerLevel;
 
 import java.util.ArrayList;
 
@@ -26,17 +26,21 @@ public class Worker {
         return baseSalary;
     }
 
+    public ArrayList<HourContract> getContracts() {
+        return contracts;
+    }
+
     public void addContract(HourContract contract){
-        contracts.add(contract);
+        getContracts().add(contract);
     }
 
     public void removeContract(HourContract contract){
-        contracts.remove(contract);
+        getContracts().remove(contract);
     }
 
     public double income(Integer month, Integer year){
-        int mesObcject = 0;
-        int anoObcject = 0;
+        int mesObject;
+        int anoObject;
         double totPerHour = 0.00;
 
         for(int i = 0; i < contracts.size(); i++){
@@ -44,10 +48,10 @@ public class Worker {
 
             String dataNum = hc.getDate().toLocaleString().substring(0,10);
             String[] parseDate = dataNum.split("/");
-            mesObcject = Integer.parseInt(parseDate[1]);
-            anoObcject = Integer.parseInt(parseDate[2]);
+            mesObject = Integer.parseInt(parseDate[1]);
+            anoObject = Integer.parseInt(parseDate[2]);
 
-            if(mesObcject  == month && anoObcject == year){
+            if(mesObject == month && anoObject == year){
                 totPerHour += hc.totalValue();
             }
         }
