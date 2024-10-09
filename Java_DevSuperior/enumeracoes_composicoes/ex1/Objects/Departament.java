@@ -1,4 +1,4 @@
-package Objects;
+package ex1.Objects;
 
 public class Departament {
     private String name;
