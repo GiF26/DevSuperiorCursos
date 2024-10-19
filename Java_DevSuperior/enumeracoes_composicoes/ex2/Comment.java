@@ -1,6 +1,6 @@
 package ex2;
 
-public class comment {
+public class Comment {
     private String text;
 
     public String getText() {
@@ -8,6 +8,10 @@ public class comment {
     }
 
     public void setText(String text) {
+        this.text = text;
+    }
+
+    public Comment(String text) {
         this.text = text;
     }
 }

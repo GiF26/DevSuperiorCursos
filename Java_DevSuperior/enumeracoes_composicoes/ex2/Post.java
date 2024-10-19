@@ -2,7 +2,7 @@ package ex2;
 
 import java.util.Date;
 
-public class post {
+public class Post {
     private Date moment;
     private String title;
     private String content;
@@ -37,6 +37,16 @@ public class post {
     }
 
     public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
+    public Post() {
+    }
+
+    public Post(Date moment, String title, String content, Integer likes) {
+        this.moment = moment;
+        this.title = title;
+        this.content = content;
         this.likes = likes;
     }
 }
