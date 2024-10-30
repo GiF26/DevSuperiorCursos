@@ -39,7 +39,7 @@ public class Order {
     public double total(){
         double total = 0;
         for (int i = 0; i < getOrderItems().size(); i++){
-            total += getOrderItems().get(i).getPrice();
+            total += getOrderItems().get(i).subtotal();
         }
         return total;
     }

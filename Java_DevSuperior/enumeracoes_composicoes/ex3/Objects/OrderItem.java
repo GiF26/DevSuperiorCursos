@@ -1,8 +1,11 @@
 package ex3.Objects;
 
+import java.util.ArrayList;
+
 public class OrderItem {
     private int quantity;
     private double price;
+    private ArrayList<Product> products;
 
     public int getQuantity() {
         return quantity;
@@ -20,8 +23,15 @@ public class OrderItem {
         this.price = price;
     }
 
-    public OrderItem(int quantity, double price) {
-        this.quantity = quantity;
-        this.price = price;
+    public ArrayList<Product> getProducts() {
+        return products;
     }
+
+    public void addProduct(Product p) {
+        products.add(p);
+    }
+
+    //    public double subtotal(){
+//        return price * quantity;
+//    }
 }
