@@ -1,13 +1,14 @@
 package ex3.Objects;
 
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client {
     private String name;
     private String email;
     private Date birth;
-    private ArrayList<Order> orders;
+    private Order order;
 
     public String getName() {
         return name;
@@ -33,21 +34,24 @@ public class Client {
         this.birth = birth;
     }
 
-    public ArrayList<Order> getOrders() {
-        return orders;
+    public Order getOrder() {
+        return order;
     }
 
-    public void addOrders(Order o) {
-        orders.add(o);
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
-    public void removeOrders(Order o) {
-        orders.remove(o);
-    }
-
-    public Client(String name, String email, Date birth) {
+    public Client(String name, String email, Date birth) throws ParseException {
         this.name = name;
         this.email = email;
         this.birth = birth;
+    }
+
+    @Override
+    public String toString() {
+        return "Client: " + getName() +
+                " (" +   birth.toLocaleString().substring(0,10) + ")" +
+                " - " + getEmail();
     }
 }

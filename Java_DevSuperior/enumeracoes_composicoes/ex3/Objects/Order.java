@@ -24,10 +24,6 @@ public class Order {
         this.status = status;
     }
 
-    public ArrayList<OrderItem> getOrderItems() {
-        return orderItems;
-    }
-
     public void addItem(OrderItem oi) {
         orderItems.add(oi);
     }
@@ -36,10 +32,19 @@ public class Order {
         orderItems.remove(oi);
     }
 
+    public ArrayList<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(ArrayList<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
     public double total(){
         double total = 0;
-        for (int i = 0; i < getOrderItems().size(); i++){
-            total += getOrderItems().get(i).subtotal();
+
+        for(OrderItem o : orderItems){
+            total += o.subtotal();
         }
         return total;
     }
@@ -47,5 +52,8 @@ public class Order {
     public Order(Date moment, OrderStatus status) {
         this.moment = moment;
         this.status = status;
+    }
+
+    public Order() {
     }
 }
