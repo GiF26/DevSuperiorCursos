@@ -39,6 +39,6 @@ public class employee {
     }
 
     public double payment(){
-        return 0;
+        return hours * valuePerHour;
     }
 }
