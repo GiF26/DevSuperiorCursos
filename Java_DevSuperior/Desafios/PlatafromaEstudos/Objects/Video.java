@@ -1,0 +1,36 @@
+package Objects;
+
+public final class Video extends Lesson{
+    private String url;
+    private int seconds;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public int getSeconds() {
+        return seconds;
+    }
+
+    public void setSeconds(int seconds) {
+        this.seconds = seconds;
+    }
+
+    public Video() {
+    }
+
+    public Video(String title, String url, int seconds) {
+        super(title);
+        this.url = url;
+        this.seconds = seconds;
+    }
+
+    @Override
+    public int duration() {
+        return 0;
+    }
+}
