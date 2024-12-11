@@ -22,10 +22,7 @@
       <sourceFolder url="file://$MODULE_DIR$/memorias, vetores e listas/Numeros_pares" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/memorias, vetores e listas/Soma_vetor" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/memorias, vetores e listas/Soma_vetores" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Desafios" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/HerancaEPolimorfismo" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/construtores,this,sobrecargas,ecapsulamento" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/enumeracoes_composicoes" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
