@@ -1,43 +1,48 @@
 package src;
 
+import Objects.Lesson;
+import Objects.Task;
+import Objects.Video;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
         try(Scanner sc = new Scanner(System.in)){
-            System.out.println("Quantas aulas tem o curso");
-//            for(int i = 0; i < qtd; i++){
-                System.out.println("Conteúdo ou tarefa (c/t)?");
-                System.out.println("Título:");
-                System.out.println("URL do vídeo:");
-                System.out.println();
+            List<Lesson> lessons = new ArrayList<>();
 
-//            }
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println();
+            System.out.println("Quantas aulas tem o curso");
+            int qtd = sc.nextInt();
+            for(int i = 0; i < qtd; i++){
+                System.out.println("Dados da " + (i+1) + "a aula");
+                System.out.println("Conteúdo ou tarefa (c/t)?");
+                char decision = sc.next().charAt(0);
+                System.out.println("Título:");
+                String titulo = sc.next();
+                sc.nextLine();
+
+                if(decision == 'c'){
+                    System.out.println("URL do vídeo:");
+                    String url = sc.next();
+                    System.out.println("Duração em segundos:");
+                    int duracao = sc.nextInt();
+                    lessons.add(new Video(titulo, url, duracao));
+                }else{
+                    System.out.println("Descrição:");
+                    String descricao = sc.next();
+                    sc.nextLine();
+                    System.out.println("Quantidade de questões:");
+                    int qtdQuestoes = sc.nextInt();
+                    lessons.add(new Task(titulo, descricao, qtdQuestoes));
+                }
+            }
+            int duracaoTotal = 0;
+            for(Lesson o: lessons){
+                duracaoTotal += o.duration();
+            }
+            System.out.println("DURAÇÃO TOAL DO CURSO = " + duracaoTotal);
         }
     }
 }
-
-//Quantas aulas tem o curso? 3
-//Dados da 1a aula:
-//Conteúdo ou tarefa (c/t)? c
-//Título: Orientação a objetos
-//URL do vídeo: https://youtu.be/aBh
-//Duração em segundos: 310
-//Dados da 2a aula:
-//Conteúdo ou tarefa (c/t)? c
-//Título: Listas em Java
-//URL do vídeo: https://youtu.be/e5a
-//Duração em segundos: 250
-//Dados da 3a aula:
-//Conteúdo ou tarefa (c/t)? t
-//Título: Exercício de fixação
-//Descrição: Faça um programa que imprima uma lista
-//Quantidade de questões: 2
-//DURAÇÃO TOTAL DO CURSO = 1160 segundos

@@ -20,9 +20,6 @@ public final class Video extends Lesson{
         this.seconds = seconds;
     }
 
-    public Video() {
-    }
-
     public Video(String title, String url, int seconds) {
         super(title);
         this.url = url;
@@ -31,6 +28,6 @@ public final class Video extends Lesson{
 
     @Override
     public int duration() {
-        return 0;
+        return getSeconds();
     }
 }

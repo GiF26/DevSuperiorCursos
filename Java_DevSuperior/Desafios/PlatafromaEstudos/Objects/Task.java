@@ -28,6 +28,6 @@ public final class Task extends Lesson{
 
     @Override
     public int duration() {
-        return 0;
+        return 300 * getQuestionCount();
     }
 }
