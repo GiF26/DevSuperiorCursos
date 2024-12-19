@@ -11,9 +11,6 @@ public final class ImportedProduct extends Product{
         this.customsFee = customsFee;
     }
 
-    public ImportedProduct() {
-    }
-
     public ImportedProduct(String name, Double price, Double customsFee) {
         super(name, price);
         this.customsFee = customsFee;

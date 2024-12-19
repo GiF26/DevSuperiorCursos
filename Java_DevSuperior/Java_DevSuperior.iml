@@ -23,6 +23,7 @@
       <sourceFolder url="file://$MODULE_DIR$/memorias, vetores e listas/Soma_vetor" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/memorias, vetores e listas/Soma_vetores" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/HerancaEPolimorfismo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Desafios/PlatafromaEstudos" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -7,16 +7,12 @@ public final class UsedProduct extends Product{
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     private Date manufactureDate;
 
-
     public Date getManufactureDate() {
         return manufactureDate;
     }
 
     public void setManufactureDate(Date manufactureDate) {
         this.manufactureDate = manufactureDate;
-    }
-
-    public UsedProduct() {
     }
 
     public UsedProduct(String name, Double price, Date manufactureDate) {
