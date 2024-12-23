@@ -1,6 +1,9 @@
 import Entities.item;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,6 +12,7 @@ public class main {
         try(Scanner sc = new Scanner(System.in)){
 
             ArrayList<item> items = new ArrayList<>();
+            ArrayList<item> itemsValor = new ArrayList<>();
 
             System.out.println("Quantos Produtos voce deseja adicionar ?");
             int qtd = sc.nextInt();
@@ -47,18 +51,25 @@ public class main {
                 char decision = sc.next().charAt(0);
 
                 if(decision == 's'){
-                    new File(path + "\\relatorioDeVendas.csv").createNewFile();
+                    boolean relatorioVenda = new File(path + "\\relatorioDeVendas.csv").createNewFile();
+                    path = path + "\\relatorioDeVendas.csv";
 
-                    for(item i : items){
-
+                    for(int i = 0; i < itemsValor.size(); i++){
+                        linhas[i] = items.get(i).getNome() + "," + items.get(i).valorTotal();
                     }
 
-
+                    try(BufferedWriter bw2 = new BufferedWriter(new FileWriter(path))) {
+                        for (String linha : linhas) {
+                            bw2.write(linha);
+                            bw2.newLine();
+                        }
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
 
             }catch (IOException e){
-                new File(path + "\\arq0001").createNewFile();
-                System.out.println("Programa terminado pois o diretorio esta vazio. arq001 foi criado voce pode utiliza-lo");
+                System.out.println("Programa terminado pois o arquivo nao foi localizado");
             }
         }
     }
