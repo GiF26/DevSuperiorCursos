@@ -5,13 +5,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
-
-    static ArrayList<item> items = new ArrayList<>();
-    static String path;
-
     public static void main(String[] args) throws IOException {
-
         try(Scanner sc = new Scanner(System.in)){
+
+            ArrayList<item> items = new ArrayList<>();
 
             System.out.println("Quantos Produtos voce deseja adicionar ?");
             int qtd = sc.nextInt();
@@ -31,35 +28,43 @@ public class main {
             }
 
             System.out.println("Digite o caminho que deseja criar o arquivo");
-            path = sc.next();
+            String path = sc.next();
             sc.nextLine();
 
-            escreveLinhas(path);
-        }
-    }
+            String[] linhas = new String[items.size()];
 
-    public static String[] montaLinhas(ArrayList items){
-        String[] linhas = new String[items.size()];
-        for(Object i : items){
-            int cont = 0;
-            linhas[cont] = i.toString();
-        }
-
-        return linhas;
-    }
-
-    public static void escreveLinhas(String strPath) throws IOException {
-        String[] linhas = montaLinhas(items);
-
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(strPath))){
-            for(String linha : linhas){
-                bw.write(linha);
-                bw.newLine();
+            for(int i = 0; i < items.size(); i++){
+                linhas[i] = items.get(i).toString();
             }
-        }catch (IOException e){
-            new File(strPath + "\\arq0001").createNewFile();
-            System.out.println("Programa terminado pois o diretorio esta vazio. arq001 foi criado voce pode utiliza-lo");
+
+            try(BufferedWriter bw = new BufferedWriter(new FileWriter(path))){
+                for(String linha : linhas){
+                    bw.write(linha);
+                    bw.newLine();
+                }
+
+                System.out.println("Deseja criar um relatorio com valor total dos items vendidos? s/n");
+                char decision = sc.next().charAt(0);
+
+                if(decision == 's'){
+                    new File(path + "\\relatorioDeVendas.csv").createNewFile();
+
+                    for(item i : items){
+
+                    }
+
+
+                }
+
+            }catch (IOException e){
+                new File(path + "\\arq0001").createNewFile();
+                System.out.println("Programa terminado pois o diretorio esta vazio. arq001 foi criado voce pode utiliza-lo");
+            }
         }
     }
 }
 
+//TV LED,1290.99,1
+//Video Game Chair,350.50,3
+//Iphone X,900.00,2
+//Samsung Galaxy 9,850.00,2

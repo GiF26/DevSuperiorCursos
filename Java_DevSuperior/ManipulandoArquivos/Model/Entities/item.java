@@ -42,10 +42,12 @@ public class item {
         return getPrecoUnitario() * getQuantidade();
     }
 
+
+
     @Override
     public String toString() {
         return getNome() + ","
                 + getPrecoUnitario() + ","
-                + getPrecoUnitario();
+                + getQuantidade();
     }
 }
