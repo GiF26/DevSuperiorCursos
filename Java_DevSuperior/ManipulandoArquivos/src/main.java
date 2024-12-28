@@ -47,35 +47,32 @@ public class main {
                     bw.newLine();
                 }
 
-                System.out.println("Deseja criar um relatorio com valor total dos items vendidos? s/n");
-                char decision = sc.next().charAt(0);
-
-                if(decision == 's'){
-                    boolean relatorioVenda = new File(path + "\\relatorioDeVendas.csv").createNewFile();
-                    path = path + "\\relatorioDeVendas.csv";
-
-                    for(int i = 0; i < itemsValor.size(); i++){
-                        linhas[i] = items.get(i).getNome() + "," + items.get(i).valorTotal();
-                    }
-
-                    try(BufferedWriter bw2 = new BufferedWriter(new FileWriter(path))) {
-                        for (String linha : linhas) {
-                            bw2.write(linha);
-                            bw2.newLine();
-                        }
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-
             }catch (IOException e){
                 System.out.println("Programa terminado pois o arquivo nao foi localizado");
+            }
+
+            System.out.println("Deseja criar um relatorio com valor total dos items vendidos? s/n");
+            char decision = sc.next().charAt(0);
+
+            if(decision == 's'){
+
+                new File("C:\\Desenv01\\relatorioDeVenda.csv").createNewFile();
+
+                path ="C:\\Desenv01\\relatorioDeVenda.csv";
+
+                for(int i = 0; i < qtd; i++){
+                    linhas[i] = items.get(i).getNome() + "," + items.get(i).valorTotal();
+                }
+
+                try(BufferedWriter bw2 = new BufferedWriter(new FileWriter(path))) {
+                    for (String linha : linhas) {
+                        bw2.write(linha);
+                        bw2.newLine();
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
 }
-
-//TV LED,1290.99,1
-//Video Game Chair,350.50,3
-//Iphone X,900.00,2
-//Samsung Galaxy 9,850.00,2
