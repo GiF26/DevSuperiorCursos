@@ -1,11 +1,15 @@
 package Objects;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Contract {
-    Integer nmbContract;
-    Date dateContract;
-    Double valueContrato;
+    private Integer nmbContract;
+    private Date dateContract;
+    private Double valueContrato;
+
+    List<Installments> installments = new ArrayList<>();
 
     public Integer getNmbContract() {
         return nmbContract;
@@ -31,6 +35,14 @@ public class Contract {
         this.valueContrato = valueContrato;
     }
 
+    public List<Installments> getInstallments() {
+        return installments;
+    }
+
+    public void setInstallments(List<Installments> installments) {
+        this.installments = installments;
+    }
+
     public Contract() {
     }
 
@@ -39,17 +51,4 @@ public class Contract {
         this.dateContract = dateContract;
         this.valueContrato = valueContrato;
     }
-
-    public double valorMensal (int month){
-        double valueinstallments = getValueContrato() / 3;
-        double valueWFees = valueinstallments + 1/100 * month;
-        return valueWFees + 2/100 ;
-    }
-
-    public Date skipDates () {
-        int addMonth = getDateContract().getMonth() + 1;
-        getDateContract().setMonth(addMonth);
-        return getDateContract();
-    }
-
 }
