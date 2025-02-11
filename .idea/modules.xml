@@ -5,10 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/Logica_DevSuperior/Desafios/Desafios.iml" filepath="$PROJECT_DIR$/Logica_DevSuperior/Desafios/Desafios.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DevSuperiorCursos.iml" filepath="$PROJECT_DIR$/.idea/DevSuperiorCursos.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/EX2/EX2.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/EX2/EX2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/EX3/EX3.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/EX3/EX3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Employee/Employee.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Employee/Employee.iml" />
       <module fileurl="file://$PROJECT_DIR$/Logica_DevSuperior/EstruturasCondicionais/EstruturasCondicionais.iml" filepath="$PROJECT_DIR$/Logica_DevSuperior/EstruturasCondicionais/EstruturasCondicionais.iml" />
       <module fileurl="file://$PROJECT_DIR$/Logica_DevSuperior/EstruturasSequenciais/EstruturasSequenciais.iml" filepath="$PROJECT_DIR$/Logica_DevSuperior/EstruturasSequenciais/EstruturasSequenciais.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Exceptions/Exceptions.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Exceptions/Exceptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/Generics/Generics.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/Generics/Generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/Generics_Set_Map.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/Generics_Set_Map.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Interface/Interface.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Interface/Interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Java_DevSuperior.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Java_DevSuperior.iml" />
@@ -18,6 +20,8 @@
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Stock_Product/Stock_Product.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Stock_Product/Stock_Product.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Student/Student.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Student/Student.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/matrizes/matrizes.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/matrizes/matrizes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/Generics/minMax/minMax.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/Generics/minMax/minMax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/programFuncionaFuncLambda/programFuncionaFuncLambda.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/programFuncionaFuncLambda/programFuncionaFuncLambda.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/untitled/untitled.iml" filepath="$PROJECT_DIR$/Java_DevSuperior/Generics_Set_Map/untitled/untitled.iml" />
     </modules>
   </component>
