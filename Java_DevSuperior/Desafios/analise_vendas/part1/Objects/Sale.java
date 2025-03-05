@@ -1,4 +1,4 @@
-package Objects;
+package part1.Objects;
 
 public class Sale {
     private int month;

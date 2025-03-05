@@ -1,6 +1,6 @@
-package src;
+package part1.src;
 
-import Objects.Sale;
+import part1.Objects.Sale;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,8 +12,7 @@ import java.util.stream.Collectors;
 
 public class Main_Desafio {
     public static void main(String[] args) {
-
-        try(Scanner sc = new Scanner(System.in)){
+        try (Scanner sc = new Scanner(System.in)) {
             System.out.println("Entre o caminho do arquivo:");
             String caminho = sc.next();
 
@@ -21,15 +20,15 @@ public class Main_Desafio {
 
                 List<Sale> lista = new ArrayList<>();
 
-                String line  = br.readLine();
-                while (line != null){
+                String line = br.readLine();
+                while (line != null) {
                     String[] fields = line.split(",");
                     lista.add(new Sale(Integer.parseInt(fields[0]), Integer.parseInt(fields[1]),
                             fields[2], Integer.parseInt(fields[3]), Double.parseDouble(fields[4])));
                     line = br.readLine();
                 }
 
-               List<Sale> listaOrdenada =  lista.stream()
+                List<Sale> listaOrdenada = lista.stream()
                         .filter(x -> x.getYear() == 2016)
                         .sorted((x, y) -> Double.compare(y.averagePrice(), x.averagePrice()))
                         .limit(5).collect(Collectors.toList());
@@ -45,7 +44,12 @@ public class Main_Desafio {
 
 
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                // Verifica se o erro é "arquivo não encontrado"
+                if (e.getMessage().contains("O sistema não pode encontrar o arquivo especificado")) {
+                    System.out.println("Erro: " + caminho + " (O sistema não pode encontrar o arquivo especificado)");
+                } else {
+                    System.out.println("Erro: " + e.getMessage()); // Outros erros de IO
+                }
             }
         }
     }
